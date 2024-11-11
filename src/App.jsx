@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SignUpForm from './Signupform'
+import SignupForm from './Signupform'
 import LoginForm from './LoginForm'
 import DashboardHome from './DashboardHome'
 import LeadsPage from './LeadsPage'
@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginForm />} />
-        <Route path="/signup" element={<SignUpForm />} />
+        <Route path="/signup" element={<SignupForm />} />
         <Route path='/dashboard' element={<DashboardHome />} />
         <Route path='/leads' element={<LeadsPage />} />
       </Routes>

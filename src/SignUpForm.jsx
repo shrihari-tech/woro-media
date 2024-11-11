@@ -25,24 +25,6 @@ const SignupForm = () => {
     });
   };
 
-  // const handleSubmit = async(e) => {
-  //   e.preventDefault();
-  //   if(formData.password !== formData.confirmPassword) {
-  //     setErrorMessage("Passwords do not match");
-  //     return;
-  //   }
-  //   try{
-  //     const response = await axios.post("http://localhost:5000/api/auth/signup", formData);
-  //     setSuccessMessage(response.data.message);
-  //     setErrorMessage("");
-  //     console.log("Signup form submitted:", response.data);
-  //   }
-  //   catch(error){
-  //     const errorMessage = error.response ? error.response.data.message : "Server Error";
-  //     setErrorMessage(errorMessage);
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted", formData); // Log form data
@@ -56,13 +38,13 @@ const SignupForm = () => {
       setSuccessMessage(response.data.message);
       setErrorMessage("");
       console.log("Signup form submitted:", response.data);
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.error("Error occurred", error); // Log error
       if (error.response) {
-        console.log("Error response data:", error.response.data); // Log error response data
-        console.log("Error response status:", error.response.status); // Log error response status
-        console.log("Error response headers:", error.response.headers); // Log error response headers
+        console.log("Error response data:", error.response.data);
+        console.log("Error response status:", error.response.status);
+        console.log("Error response headers:", error.response.headers);
       }
       const errorMessage = error.response ? error.response.data.message : "Server Error";
       setErrorMessage(errorMessage);
